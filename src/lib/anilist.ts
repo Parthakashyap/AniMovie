@@ -1,3 +1,4 @@
+
 import { type AniListResponse, type AniListMediaResponse, type Media } from './types';
 
 const ANILIST_API_URL = 'https://graphql.anilist.co';
@@ -79,13 +80,19 @@ async function anilistFetch(query: string, variables: object) {
     }),
   };
 
-  const response = await fetch(ANILIST_API_URL, options);
+  try {
+    const response = await fetch(ANILIST_API_URL, options);
 
-  if (!response.ok) {
-    throw new Error(`AniList API responded with status: ${response.status}`);
+    if (!response.ok) {
+      console.error(`AniList API responded with status: ${response.status}`);
+      return { data: null }; // Return a consistent shape on error
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error('Failed to fetch from AniList:', error);
+    return { data: null }; // Return a consistent shape on error
   }
-
-  return response.json();
 }
 
 export async function fetchFromAniList(options: FetchOptions = {}): Promise<Media[]> {
@@ -96,7 +103,7 @@ export async function fetchFromAniList(options: FetchOptions = {}): Promise<Medi
   
   if (json.data && json.data.Page && json.data.Page.media) {
     // Filter out items with null description as they are often not useful
-    return json.data.Page.media.filter(item => item.description);
+    return json.data.Page.media.filter(item => item && item.description);
   }
   
   return [];
