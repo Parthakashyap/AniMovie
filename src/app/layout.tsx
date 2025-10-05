@@ -4,6 +4,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { Analytics } from "@vercel/analytics/next"
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -53,6 +54,7 @@ export default function RootLayout({
         </div>
         <Footer />
         <Toaster />
+        <Analytics />
       </body>
     </html>
   );
