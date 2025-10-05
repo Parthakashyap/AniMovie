@@ -2,6 +2,15 @@
 
 AniMovie is a modern, web-based media streaming platform that allows users to discover, search, and watch a vast library of Anime, Manga, Movies, and TV Shows. Built with Next.js and Tailwind CSS, it offers a clean, intuitive, and responsive user experience similar to top-tier streaming services.
 
+![AniMovie Screenshot](https://raw.githubusercontent.com/Parthakashyap/AniMovie/refs/heads/main/public/demo.png) 
+
+
+____________________
+
+
+
+![AniMovie Screenshot](https://raw.githubusercontent.com/Parthakashyap/AniMovie/refs/heads/main/public/demo2.png) 
+
 
 ## How It Works
 
