@@ -17,7 +17,7 @@ interface TvCarouselProps {
 export default function TvCarousel({ title, items }: TvCarouselProps) {
   return (
     <section>
-      <h2 className="mb-4 text-2xl font-bold tracking-tight text-foreground">
+      <h2 className="mb-4 text-2xl font-bold tracking-tight text-foreground mt-14 md:mt-20">
         {title}
       </h2>
       <div className="relative">
