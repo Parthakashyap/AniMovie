@@ -7,7 +7,7 @@ interface JsonLdProps {
   itemNumber: number;
 }
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://animovie.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://animovie.parthakashyap.com';
 
 function JsonLd({ media, type, itemNumber }: JsonLdProps) {
   const title = media.title.english || media.title.romaji;
