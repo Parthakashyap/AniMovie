@@ -5,6 +5,8 @@ import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { Analytics } from "@vercel/analytics/next"
+import DisclaimerModal from '@/components/disclaimer-modal';
+
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -49,6 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={cn('font-sans antialiased flex flex-col min-h-screen', nunito.variable)}>
+      <DisclaimerModal />
         <div className="flex-grow">
           {children}
         </div>
